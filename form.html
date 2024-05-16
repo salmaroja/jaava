@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#count{
+    width: 200px;
+    height: 25px ;
+
+}
+#chama>div{
+    padding: 20px;
+    margin: 20px;
+}
+#er{
+width: 200px;
+height: 30px;
+display: inline;
+border-color: red;
+border-width: 3px;
+
+}
+#ir{
+width: 200px;
+height: 30px;
+
+
+
+}
+#refferer{
+    width: 200px;
+    height: 25px;
+}
+    </style>
+</head>
+<body>
+    <h2> Test JavaScript Form Validation</h2>
+    <form>
+        <table>
+            <tr>
+              <th><div id="chama"> <label for="name"> Name<span style="color: red;">*</span></label>
+                <td> <input  id="er" type="text" value="please enter your name !" style="color: red;" ><br><br></td> </tr>
+           <tr> <th><label for="Address"> Address <span style="color: red;">*</span> <option value="select andress"></option></label> </th> 
+           <td> <input type="text" id="ir"><br><br></td> </tr>
+           <tr>  <th><label for="Zipcode"> Zip code <span style="color: red;">*</span> </label></th>
+            <td> <input type="text" id="ir"><br> <br> </td></tr>
+           <tr> <th><label for="Country"> Country <span style="color: red;">*</span> 
+            <td>  <select id="referrer" name="referrer">
+                      <option value="">please select ......</option>
+                      <option value="">tanzania</option>
+                      <option value="">zanzibar</option>
+                      <option value=""> UGANDA</option>
+        </select></td> </label></th><br><br></tr> 
+        
+           <tr> <th>  <label for="gender"> Gender <span style="color: red;">*</span> </label>
+               <td> <input  type="radio" name="Male" value="Male"/> Male</label>
+                  <input type="radio" name="Female" /> Female<br>  </td></th</tr> <br><br>
+            
+    <br>
+          <tr> <th><label for="preferences"> preferences <span style="color: red;">*</span>
+      <td><input type="checkbox" >Red <input type="checkbox">Green  <input type="checkbox">Bluee </td>
+        </label><br><br> </th></tr><br>
+        <tr> <th> <label for="Email">Email <span style="color: red;">*</span></label> 
+       <td>  <input type="text"  id="ir"> </td></th></tr>
+    <br>
+      <tr><th> <label for="password(6-8 characters)">password (6-8 characters) <span style="color: red;">*</span></label>
+          <td><input type="text" id="ir"> <br><br> </td></th> </tr>
+   <tr><th>  <Label> verify password <span style="color: red;"> *</span></Label>
+      <td> <input type="text" id="ir"></td>
+    </th></tr> 
+    </table>
+    </form> <br><br>
+    <table>
+    <td><button onclick="document.getElementById('im').innerHTML='submited'">SEND </button><span></span> <button> CLEAR</button></td></table>
+    <p id="im"></p>
+    <script> document.getElementById('').innerHTML= "please enter your name !" </script>
+
+</body>
+</html>

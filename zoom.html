@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Credit Card Validator</h2>
+        <input type="text" id="cardNumber" placeholder="Enter your credit card number">
+        <button onclick="validateCard()">Validate</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function validateCreditCard(cardNumber) {
+            const amexRegex = /^(34|37)\d{13}$/;
+            const mastercardRegex = /^(5[1-5])\d{14}$/;
+            const visaRegex13 = /^4\d{12}$/;
+            const visaRegex16 = /^4\d{15}$/;
+            const discoverRegex = /^6011\d{12}(?:\d{3})?$/;
+            const dinersClubRegex14 = /^3(?:0[0-5])\d{11}$/;
+            const dinersClubRegex16 = /^3(?:0[0-5])\d{13}$/;
+
+           if (amexRegex.test(cardNumber)) {
+                return "American Express";
+            } else if (mastercardRegex.test(cardNumber)) {
+                return "MasterCard";
+            } else if (visaRegex13.test(cardNumber) || visaRegex16.test(cardNumber)) {
+                return "VISA";
+            } else if (discoverRegex.test(cardNumber)) {
+                return "Discover";
+            } else if (dinersClubRegex14.test(cardNumber) || dinersClubRegex16.test(cardNumber)) {
+                return "Diners Club";
+            } else {
+                return "Error: Card number is not valid.";
+            }
+        }
+
+        function validateCard() {
+            const cardNumber = document.getElementById('cardNumber').value.trim();
+            const resultDiv = document.getElementById('result');
+            const result = validateCreditCard(cardNumber);
+
+            if (result.startsWith("Error")) {
+                resultDiv.className = 'result error';
+            } else {
+                resultDiv.className = 'result success';
+            }
+
+            resultDiv.textContent = result;
+        }
+    </script>
+</body>
+</html>
